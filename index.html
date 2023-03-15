@@ -1,18 +1,15 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reCAPTCHA</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-        #rc-imageselect{
-            transform: scale(2.77);
-            transform-origin: 0 0;
-        }
-    </style>
-  </head>
-  <body style='background-color: white;'>
-    <div style='height: 60px;'></div>
+</head>
+<body style='background-color: white;'>
     <form id="recaptcha" action="?" method="POST">
-      <div class="g-recaptcha" style="transform: scale(2.77); transform-origin: 0 0;"
+      <div class="g-recaptcha"
         data-sitekey="6Ld1UwElAAAAALqAjE1T7nEm2xy3x3471sobr_yG"
         data-callback="captchaCallback"></div>
 
