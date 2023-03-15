@@ -8,12 +8,7 @@
     <form action="?" method="POST">
       <div class="g-recaptcha" 
         data-sitekey="6Ld1UwElAAAAALqAjE1T7nEm2xy3x3471sobr_yG"
-        data-callback="function captchaCallback(response){
-            console.log(response);
-            if(typeof Captcha!=="undefined"){
-              Captcha.postMessage(response);
-            }
-          }"></div>
+        data-callback="captchaCallback"></div>
 
     </form>
     <script>
