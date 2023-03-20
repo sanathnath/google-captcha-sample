@@ -25,6 +25,9 @@
       function elementCheck(){
         ele = (document.getElementById('recaptcha').nextElementSibling).nextElementSibling.style.visibility;
         console.log(ele);
+        if (ele == "visible") {
+          check.postMessage("visible");
+        }
       }
 
       setInterval(elementCheck,2000);
