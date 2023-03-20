@@ -23,11 +23,11 @@
       }
 
       function elementCheck(){
-        ele = (document.getElementById('recaptcha').nextElementSibling).nextElementSibling;
+        ele = (document.getElementById('recaptcha').nextElementSibling).nextElementSibling.style.visibility;
         console.log(ele);
       }
 
-      // setInterval(elementCheck,2000);
+      setInterval(elementCheck,2000);
     </script>
   </body>
 </html>
