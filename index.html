@@ -15,22 +15,38 @@
 
     </form>
     <script>
+      let imageStyle = 'hidden';
+      let intervelId = '';
+
       function captchaCallback(response){
         console.log(response);
         if(typeof Captcha!=="undefined"){
           Captcha.postMessage(response);
+          clearInterval(intervelId);
         }
       }
 
       function elementCheck(){
-        ele = (document.getElementById('recaptcha').nextElementSibling).nextElementSibling.style.visibility;
+        let ele = (document.getElementById('recaptcha').nextElementSibling).nextElementSibling.style.visibility;
         // console.log(ele);
-        if (ele == "visible") {
-          check.postMessage("visible");
+        if (ele == "visible" && imageStyle == 'hidden') {
+          imageStyle = 'visible';
+          isImageVisible();
+        }else if(ele == "hidden" && imageStyle == 'visible'){
+          imageStyle = 'hidden';
+          isImageHidden();
         }
       }
 
-      setInterval(elementCheck,2000);
+      function isImageVisible(){
+        check.postMessage("visible");
+      }
+
+      function isImageHidden(){
+        check.postMessage("hidden");
+      }
+
+      intervelId = setInterval(elementCheck,2000);
     </script>
   </body>
 </html>
