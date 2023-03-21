@@ -16,7 +16,6 @@
     </form>
     <script>
       let imageStyle = 'hidden';
-      let intervelId = '';
 
       function captchaCallback(response){
         console.log(response);
@@ -24,7 +23,6 @@
           Captcha.postMessage(response);
           imageStyle = 'hidden';
           isImageVisible('hidden');
-          clearInterval(intervelId);
         }
       }
 
@@ -44,8 +42,7 @@
       function isImageVisible(response){
         check.postMessage(response);
       }
-
-      intervelId = setInterval(elementCheck,1000);
+      setInterval(elementCheck,1000);
     </script>
   </body>
 </html>
