@@ -22,6 +22,8 @@
         console.log(response);
         if(typeof Captcha!=="undefined"){
           Captcha.postMessage(response);
+          imageStyle = 'hidden';
+          isImageVisible('hidden');
           clearInterval(intervelId);
         }
       }
@@ -31,22 +33,18 @@
         // console.log(ele);
         if (ele == "visible" && imageStyle == 'hidden') {
           imageStyle = 'visible';
-          isImageVisible();
+          isImageVisible('visible');
         }else if(ele == "hidden" && imageStyle == 'visible'){
           imageStyle = 'hidden';
-          isImageHidden();
+          isImageVisible('hidden');
         }
       }
 
-      function isImageVisible(){
-        check.postMessage("visible");
+      function isImageVisible(response){
+        check.postMessage(response);
       }
 
-      function isImageHidden(){
-        check.postMessage("hidden");
-      }
-
-      intervelId = setInterval(elementCheck,2000);
+      intervelId = setInterval(elementCheck,1000);
     </script>
   </body>
 </html>
