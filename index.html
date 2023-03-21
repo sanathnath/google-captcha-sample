@@ -30,8 +30,8 @@
 
       function elementCheck(){
         let ele = (document.getElementById('recaptcha').nextElementSibling).nextElementSibling.style.visibility;
-        console.log(ele);
-        console.log(imageStyle);
+        console.log("element: "+ele);
+        console.log("imagestyle: "+imageStyle);
         if (ele == "visible" && imageStyle == 'hidden') {
           imageStyle = 'visible';
           isImageVisible('visible');
