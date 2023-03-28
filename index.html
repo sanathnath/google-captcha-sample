@@ -16,7 +16,9 @@
     </form>
     <script>
       let imageStyle = 'hidden';
-
+      let privacyDiv = document.getElementsByClassName('rc-anchor-pt')[0];
+      console.log(privacyDiv);
+      privacyDiv.style.display = 'none';
       function captchaCallback(response){
         if(typeof Captcha!=="undefined"){
           Captcha.postMessage(response);
