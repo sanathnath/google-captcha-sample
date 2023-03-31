@@ -19,7 +19,7 @@
       function captchaCallback(response){
         if(typeof Captcha!=="undefined"){
           // Captcha.postMessage(response);
-          window.flutter_inappwebview.callHandler('channel1', response);
+          window.flutter_inappwebview.callHandler('Captcha', response);
           imageStyle = 'hidden';
           isImageVisible('hidden');
         }
@@ -37,7 +37,8 @@
       }
 
       function isImageVisible(response){
-        check.postMessage(response);
+        // check.postMessage(response);
+        window.flutter_inappwebview.callHandler('check', response);
       }
       setInterval(elementCheck,1000);
     </script>
