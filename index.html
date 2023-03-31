@@ -19,10 +19,10 @@
       function captchaCallback(response){
         if(typeof Captcha!=="undefined"){
           // Captcha.postMessage(response);
-          window.flutter_inappwebview.callHandler('Captcha', response);
           imageStyle = 'hidden';
           isImageVisible('hidden');
         }
+        window.flutter_inappwebview.callHandler('captcha', response);
       }
 
       function elementCheck(){
