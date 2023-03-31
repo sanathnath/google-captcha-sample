@@ -16,12 +16,10 @@
     </form>
     <script>
       let imageStyle = 'hidden';
-      let privacyDiv = document.getElementsByClassName('rc-anchor-pt');
-      console.log(privacyDiv);
-      privacyDiv[0].style.display = 'none';
       function captchaCallback(response){
         if(typeof Captcha!=="undefined"){
-          Captcha.postMessage(response);
+          // Captcha.postMessage(response);
+          window.flutter_inappwebview.callHandler('channel1', response);
           imageStyle = 'hidden';
           isImageVisible('hidden');
         }
